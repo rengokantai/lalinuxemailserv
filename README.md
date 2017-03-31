@@ -50,3 +50,35 @@ CREATE_MAIL_SPOOL=no
 ```
 echo 'MAIL=$HOME/Maildir/' > /etc/profile.d/mailenv.sh
 ```
+
+### 3
+install mailx as email client
+```
+yum install -y mailx
+```
+```
+useradd ke
+useradd test
+```
+```
+su - ke
+mailx test
+```
+mail:
+```
+title
+body
+.
+```
+```
+exit
+su - test
+mailx
+```
+(press r to reply)
+
+
+### 4
+```
+vi /etc/postfix/main.cf
+```
