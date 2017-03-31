@@ -143,3 +143,7 @@ top 1
 
 quit
 ```
+test imap
+```
+telnet localhost imap
+```
