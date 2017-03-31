@@ -106,6 +106,16 @@ search relay_dom
 ```
 relay_domains = 
 ```
-
+save and exit ,then
 ```
+systemctl restart postfix
+```
+send (if 
+```
+su - ke
+mailx x@gmail.xom
+```
+```
+exit
+tail -n20 /var/log/maillog
 ```
