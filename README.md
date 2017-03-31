@@ -98,3 +98,14 @@ search inet
 ```
 inet_interfaces = all
 ```
+search mynetworks_style
+```
+mynetworks_style = subnet
+```
+search relay_dom
+```
+relay_domains = 
+```
+
+```
+```
