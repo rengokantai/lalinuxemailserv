@@ -82,3 +82,19 @@ mailx
 ```
 vi /etc/postfix/main.cf
 ```
+search myhostname
+```
+myhostname = mail.yidi.me
+```
+search mydomain
+```
+mydomain = yidi.me
+```
+search myorigin
+```
+myorigin= $mydomain
+```
+search inet
+```
+inet_interfaces = all
+```
