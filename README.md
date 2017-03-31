@@ -110,12 +110,36 @@ save and exit ,then
 ```
 systemctl restart postfix
 ```
-send (if 
+send mail
 ```
 su - ke
 mailx x@gmail.xom
 ```
+check log
 ```
 exit
 tail -n20 /var/log/maillog
+```
+
+
+### 5
+```
+yum install -y dovecot
+systemctl enable dovecot && systemctl start dovecot
+```
+```
+passwd ke
+passwd test
+```
+```
+telnet localhost pop3
+```
+then
+```
+user ke
+pass passss
+list
+top 1
+
+quit
 ```
