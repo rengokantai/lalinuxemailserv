@@ -166,3 +166,6 @@ openssl s_client -connect mail.yidi.me:pop3s
 ```
 open ports=25(smtp) 110(pop3) 143(imap)  
 For openssl, smtp=465 imaps=993 pop3s=995
+```
+openssl s_client -connect mail.yidi.me:pop3 -starttls pop3
+```
