@@ -169,3 +169,46 @@ For openssl, smtp=465 imaps=993 pop3s=995
 ```
 openssl s_client -connect mail.yidi.me:pop3 -starttls pop3
 ```
+
+
+### 6
+[copy from here: secureing postfix](https://access.redhat.com/articles/1468593)  
+paste in 
+```
+vi /etc/postfix/main.cf
+```
+```
+smtp_use_tls = yes
+smtpd_use_tls = yes
+smtpd_tls_security_level = encrypt
+smtpd_tls_auth_only = yes
+smtp_tls_note_starttls_offer = yes
+smtpd_tls_key_file = /etc/pki/tls/private/postfix.key
+smtpd_tls_cert_file = /etc/pki/tls/certs/postfix.pem
+smtpd_tls_dh1024_param_file = /etc/pki/tls/private/postfix.dh.param
+smtp_tls_CAfile = /etc/pki/tls/certs/ca-bundle.crt
+smtpd_tls_loglevel = 1
+smtpd_tls_session_cache_timeout = 3600s
+smtpd_tls_session_cache_database = btree:/var/lib/postfix/smtpd_tls_cache
+tls_random_source = dev:/dev/urandom
+
+smtpd_tls_mandatory_protocols = !SSLv2, !SSLv3
+smtpd_tls_protocols = !SSLv2, !SSLv3
+smtp_tls_mandatory_protocols = !SSLv2, !SSLv3
+smtp_tls_protocols = !SSLv2, !SSLv3
+
+smtp_tls_exclude_ciphers = EXP, MEDIUM, LOW, DES, 3DES, SSLv2
+smtpd_tls_exclude_ciphers = EXP, MEDIUM, LOW, DES, 3DES, SSLv2
+
+tls_high_cipher_list = kEECDH:+kEECDH+SHA:kEDH:+kEDH+SHA:+kEDH+CAMELLIA:kECDH:+kECDH+SHA:kRSA:+kRSA+SHA:+kRSA+CAMELLIA:!aNULL:!eNULL:!SSLv2:!RC4:!MD5:!DES:!EXP:!SEED:!IDEA:!3DES
+tls_medium_cipher_list = kEECDH:+kEECDH+SHA:kEDH:+kEDH+SHA:+kEDH+CAMELLIA:kECDH:+kECDH+SHA:kRSA:+kRSA+SHA:+kRSA+CAMELLIA:!aNULL:!eNULL:!SSLv2:!MD5:!DES:!EXP:!SEED:!IDEA:!3DES
+
+smtp_tls_ciphers = high
+smtpd_tls_ciphers = high
+```
+
+
+create key and cert
+```
+openssl req -new -x509 -days 3650 -nodes -out /etc/pki/tls/certs/postfix.pem -keyout /etc/pki/tls/private/postfix.key
+```
