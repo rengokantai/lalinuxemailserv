@@ -212,3 +212,20 @@ create key and cert
 ```
 openssl req -new -x509 -days 3650 -nodes -out /etc/pki/tls/certs/postfix.pem -keyout /etc/pki/tls/private/postfix.key
 ```
+press enter for all
+```
+postfix reload
+```
+connect
+```
+openssl s_client -connect localhost:smtp -starttls smtp
+```
+
+strong algo
+```
+openssl dhparam -out /etc/pki/tls/private/postfix.dh.param.tmp 1024
+mv /etc/pki/tls/private/postfix.dh.param.tmp  /etc/pki/tls/private/postfix.dh.param
+```
+
+
+### 7 Configure SASL
