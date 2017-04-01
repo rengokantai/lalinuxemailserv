@@ -247,3 +247,27 @@ user=postfix
 group=postfix
   }
 ```
+then
+```
+vi /etc/dovecot/conf.d/10-auth.conf
+```
+search auth_mech
+```
+auth_mechanisms = plain login
+```
+
+then
+```
+vi /etc/postfix/main.cf
+```
+edit, add to last
+```
+smtpd_sasl_type = dovecot
+smtpd_sasl_path = private/auth
+smtpd_sasl_auth_enable = yes
+```
+restart both
+```
+systemctl restart dovecot && systemctl restart postfix
+```
+```
