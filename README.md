@@ -229,3 +229,21 @@ mv /etc/pki/tls/private/postfix.dh.param.tmp  /etc/pki/tls/private/postfix.dh.pa
 
 
 ### 7 Configure SASL
+```
+vi /etc/dovecot/conf.d/10-master.conf
+```
+search smtp-auth
+```
+  #unix_listener auth-userdb {
+    #mode = 0666
+    #user =
+    #group =
+ # }
+
+  # Postfix smtp-auth
+  unix_listener /var/spool/postfix/private/auth {
+    mode = 0660
+user=postfix
+group=postfix
+  }
+```
