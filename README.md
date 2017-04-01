@@ -147,3 +147,20 @@ test imap
 ```
 telnet localhost imap
 ```
+login
+```
+a login test passss
+```
+select inbox
+```
+b select inbox
+```
+```
+c logout
+```
+
+use openssl to connect pop3 from another machine:
+- create another machine, add hostname mail.yidi.me
+```
+openssl s_client -connect mail.yidi.me:pop3s
+```
