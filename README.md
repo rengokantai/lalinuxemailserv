@@ -273,3 +273,15 @@ systemctl restart dovecot && systemctl restart postfix
 ```
 echo -ne '\000test\000pass' |openssl base64
 ```
+
+
+## 2. Going Betond Basic Services
+### 2 Install database tools
+```
+yum -y --enablerepo=extras install epel-release && yum -y install wget
+```
+```
+yum -y install mariadb-server dovecot-mysql
+```
+and, go to sourceforge, download postfix.admin.  
+what it is gonna do for us is create and manage the tables that go along with our email server.
