@@ -292,3 +292,11 @@ cd /usr/share
 wget https://downloads.sourceforge.net/project/postfixadmin/postfixadmin/postfixadmin-3.0.2/postfixadmin-3.0.2.tar.gz
 tar xvf 
 ```
+
+install php
+```
+yum install -y php php-mysql php-imap php-mbstring phpMyAdmin
+···
+
+
+
