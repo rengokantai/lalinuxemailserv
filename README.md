@@ -271,3 +271,5 @@ restart both
 systemctl restart dovecot && systemctl restart postfix
 ```
 ```
+echo -ne '\000test\000pass' |openssl base64
+```
