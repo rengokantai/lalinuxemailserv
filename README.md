@@ -296,7 +296,7 @@ tar xvf
 install php
 ```
 yum install -y php php-mysql php-imap php-mbstring phpMyAdmin
-···
+```
 
 
 ### 3
@@ -306,4 +306,8 @@ mv postfixadmin-3.0.2 postfixadmin
 ```
 ```
 restorecon /usr/share/postfixadmin
+```
+create conf
+```
+cd /etc/httpd/conf.d/postfixadmin.conf
 ```
