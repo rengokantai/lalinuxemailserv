@@ -311,3 +311,12 @@ create conf
 ```
 cd /etc/httpd/conf.d/postfixadmin.conf
 ```
+edit
+```
+Alias /postfixadmin "/usr/share/postfixadmin"
+<Directory "/usr/share/postfixadmin">
+  AllowOverride All
+  Options FollowSymlinks
+  Require all granted
+</Directory>
+```
