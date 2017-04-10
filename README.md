@@ -299,4 +299,8 @@ yum install -y php php-mysql php-imap php-mbstring phpMyAdmin
 ···
 
 
-
+### 3
+```
+chown -R apache:apache postfixadmin-3.0.2
+mv postfixadmin-3.0.2 postfixadmin
+```
