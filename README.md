@@ -285,3 +285,10 @@ yum -y install mariadb-server dovecot-mysql
 ```
 and, go to sourceforge, download postfix.admin.  
 what it is gonna do for us is create and manage the tables that go along with our email server.
+
+#### 03:05
+```
+cd /usr/share
+wget https://downloads.sourceforge.net/project/postfixadmin/postfixadmin/postfixadmin-3.0.2/postfixadmin-3.0.2.tar.gz
+tar xvf 
+```
