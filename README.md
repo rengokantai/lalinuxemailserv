@@ -320,3 +320,9 @@ Alias /postfixadmin "/usr/share/postfixadmin"
   Require all granted
 </Directory>
 ```
+
+```
+setsebool httpd_can_network_connect on
+setsebool httpd_can_sendmail on
+```
+
